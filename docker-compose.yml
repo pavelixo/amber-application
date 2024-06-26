@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    image: amber-application
+    command: amber watch
+    environment:
+      DATABASE_URL: sqlite3:./db/amber_application_development.db
+    ports:
+      - 3000:3000
+    links:
+      - db
+    volumes:
+    - .:/app
+    - shards:/app/lib
+
+  migrate:
+    build: .
+    image: amber-application
+    command: bash -c 'amber db migrate seed'
+    environment:
+      DATABASE_URL: sqlite3:./db/amber_application_development.db
+    volumes:
+      - .:/app
+    links:
+      - db
+
+  db:
+    image: amber-application
+    command: 'bash -c "ls > /dev/null"'
+    volumes:
+    - db:/app/local/db
+
+volumes:
+  db:
+  shards:

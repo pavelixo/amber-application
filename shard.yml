@@ -1,0 +1,46 @@
+name: amber-application
+version: 0.1.0
+
+authors:
+  - pavelixo <trashxindoragon87@gmail.com>
+
+crystal: 1.12.2
+
+license: UNLICENSED
+
+targets:
+  amber-application:
+    main: src/amber-application.cr
+
+  amber:
+    main: lib/amber/src/amber/cli.cr
+
+dependencies:
+  amber:
+    github: amberframework/amber
+    version: 1.4.1
+
+  granite:
+    github: amberframework/granite
+    version: ~> 0.23.1
+
+  quartz_mailer:
+    github: amberframework/quartz-mailer
+    version: ~> 0.8.0
+
+  jasper_helpers:
+    github: amberframework/jasper-helpers
+    version: ~> 1.2.2 
+
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
+    version: ~> 0.19.0
+
+  citrine-i18n:
+    github: dare892/citrine-i18n
+    version: ~> 1.0.0
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 1.5.0
