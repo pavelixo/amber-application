@@ -1,9 +1,6 @@
 name: amber-application
 version: 0.1.0
 
-authors:
-  - pavelixo <trashxindoragon87@gmail.com>
-
 crystal: 1.12.2
 
 license: UNLICENSED
